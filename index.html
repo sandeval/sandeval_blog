@@ -6,7 +6,7 @@
   <title>sandeval · Alejandro Sandoval</title>
   <meta name="description" content="Engineer @ Cloudflare. AI security, prompt injection, 35mm. Field notes from CDMX.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&family=JetBrains+Mono:wght@400;500&family=Permanent+Marker&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -333,9 +333,20 @@
     }
     .ph-icon svg { width: 18px; height: 18px; stroke: var(--text3); fill: none; stroke-width: 1.5; }
     .ph-text { font-size: 10px; color: var(--text3); font-family: 'JetBrains Mono', monospace; position: relative; z-index: 1; }
-    .photo-meta { padding: 10px 12px; }
-    .photo-meta-name { font-size: 12px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
-    .photo-meta-sub { font-size: 10px; color: var(--text3); font-family: 'JetBrains Mono', monospace; }
+    .photo-meta {
+      padding: 12px 14px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .photo-meta-name {
+      font-family: 'Permanent Marker', cursive;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--text);
+      transform: rotate(-3deg);
+      display: inline-block;
+    }
 
     /* ── BIO TIMELINE ── */
     .bio-row {
@@ -1297,11 +1308,9 @@
             <div class="ph-icon">
               <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
             </div>
-            <span class="ph-text">sando · 05.01.26</span>
           </div>
           <div class="photo-meta">
-            <div class="photo-meta-name">Alejandro Sandoval</div>
-            <div class="photo-meta-sub">cdmx · 19.43°N</div>
+            <div class="photo-meta-name">May '26.</div>
           </div>
         </div>
       </div>
@@ -1527,28 +1536,53 @@
       }, { passive: true });
     }
 
-    // Photo card 3D tilt — over .photo-card-wrap, preserving baseline -1.5deg tilt
+    // Flowy photo card — lerp on desktop, gyroscope on mobile
     const card = document.getElementById('photoCard');
     const cardWrap = card ? card.parentElement : null;
     if (card && cardWrap && !prefersReducedMotion) {
       const baseRotate = -1.5;
-      cardWrap.addEventListener('mousemove', (e) => {
-        const rect = cardWrap.getBoundingClientRect();
-        const cx = rect.left + rect.width / 2;
-        const cy = rect.top + rect.height / 2;
-        const dx = (e.clientX - cx) / (rect.width / 2);
-        const dy = (e.clientY - cy) / (rect.height / 2);
+      let tX = 0, tY = 0;
+      let cX = 0, cY = 0;
+      let rafId = null;
+
+      const lerp = (a, b, t) => a + (b - a) * t;
+
+      const applyTransform = () => {
         cardWrap.style.transform =
-          `perspective(600px) rotate(${baseRotate * 0.4}deg) rotateY(${dx * 8}deg) rotateX(${-dy * 8}deg) scale(1.02)`;
+          `perspective(600px) rotate(${baseRotate}deg) rotateY(${cY}deg) rotateX(${cX}deg)`;
+      };
+
+      const tick = () => {
+        cX = lerp(cX, tX, 0.07);
+        cY = lerp(cY, tY, 0.07);
+        applyTransform();
+        if (Math.abs(cX - tX) > 0.01 || Math.abs(cY - tY) > 0.01) {
+          rafId = requestAnimationFrame(tick);
+        } else {
+          cX = tX; cY = tY;
+          applyTransform();
+          rafId = null;
+        }
+      };
+
+      const startTick = () => { if (!rafId) rafId = requestAnimationFrame(tick); };
+
+      cardWrap.style.transition = 'none';
+
+      // Desktop — cursor anywhere on the page
+      window.addEventListener('mousemove', (e) => {
+        const dx = (e.clientX / window.innerWidth  - 0.5) * 2;
+        const dy = (e.clientY / window.innerHeight - 0.5) * 2;
+        tY =  dx * 9;
+        tX = -dy * 6;
+        startTick();
+      }, { passive: true });
+
+      document.addEventListener('mouseleave', () => {
+        tX = 0; tY = 0;
+        startTick();
       });
-      cardWrap.addEventListener('mouseleave', () => {
-        cardWrap.style.transform =
-          `perspective(600px) rotate(${baseRotate}deg) rotateY(0deg) rotateX(0deg) scale(1)`;
-        cardWrap.style.transition = 'transform 0.4s ease';
-      });
-      cardWrap.addEventListener('mouseenter', () => {
-        cardWrap.style.transition = 'transform 0.05s ease';
-      });
+
     }
 
     // Active nav link on scroll
