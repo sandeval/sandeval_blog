@@ -1595,34 +1595,17 @@
 
     document.querySelectorAll('section[id]').forEach(s => scrollSpy.observe(s));
 
-    // GitHub commits — fetch real count for current month
+    // GitHub commits — proxied through /api/commits Worker (includes private repos)
     (async () => {
       try {
-        const now = new Date();
-        const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().split('T')[0];
-        const monthLabel = now.toLocaleString('en', { month: 'short' }) + " '" + String(now.getFullYear()).slice(2);
-
-        let count = 0;
-        let done = false;
-
-        for (let page = 1; page <= 3 && !done; page++) {
-          const res = await fetch(`https://api.github.com/users/sandeval/events/public?per_page=100&page=${page}`);
-          if (!res.ok) break;
-          const events = await res.json();
-          if (!events.length) break;
-
-          for (const e of events) {
-            if (e.created_at.slice(0, 10) < monthStart) { done = true; break; }
-            if (e.type === 'PushEvent') count += e.payload.commits?.length ?? 0;
-          }
-        }
-
-        if (count > 0) {
-          const numEl = document.querySelector('.pcard-code .pcard-num');
-          const subEl = document.querySelector('.pcard-code .pcard-sub');
-          if (numEl) numEl.innerHTML = `${count}<span class="unit">commits</span>`;
-          if (subEl) subEl.innerHTML = `${monthLabel} · <em>shipping LSPM</em>`;
-        }
+        const res = await fetch('/api/commits');
+        if (!res.ok) return;
+        const { count, month } = await res.json();
+        if (!count) return;
+        const numEl = document.querySelector('.pcard-code .pcard-num');
+        const subEl = document.querySelector('.pcard-code .pcard-sub');
+        if (numEl) numEl.innerHTML = `${count}<span class="unit">commits</span>`;
+        if (subEl) subEl.innerHTML = `${month} · <em>shipping LSPM</em>`;
       } catch (_) { /* keep static fallback */ }
     })();
   </script>
