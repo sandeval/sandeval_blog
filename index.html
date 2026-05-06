@@ -918,20 +918,16 @@
     }
     .cc {
       aspect-ratio: 1;
-      background: var(--accent);
+      background: #e8e4de;
       border-radius: 2px;
-      opacity: 0.10;
-      transition: opacity 0.5s ease, transform 0.5s ease;
+      transition: transform 0.5s ease;
     }
-    .cc.cc-1 { opacity: 0.20; }
-    .cc.cc-2 { opacity: 0.42; }
-    .cc.cc-3 { opacity: 0.65; }
-    .cc.cc-4 { opacity: 0.92; }
-    .pcard-code:hover .cc {
-      opacity: 0.85;
-      transform: scale(0.95);
-    }
-    .pcard-code:hover .cc.cc-4 { opacity: 1; transform: scale(1.05); }
+    .cc.cc-1 { background: #9be9a8; }
+    .cc.cc-2 { background: #40c463; }
+    .cc.cc-3 { background: #30a14e; }
+    .cc.cc-4 { background: #216e39; }
+    .pcard-code:hover .cc { transform: scale(0.95); }
+    .pcard-code:hover .cc.cc-4 { transform: scale(1.05); }
 
     /* ── ASYMMETRY (intentional, single offender per zone) ── */
     .bio-signal {
@@ -1598,6 +1594,37 @@
     }, { rootMargin: '-40% 0px -55% 0px' });
 
     document.querySelectorAll('section[id]').forEach(s => scrollSpy.observe(s));
+
+    // GitHub commits — fetch real count for current month
+    (async () => {
+      try {
+        const now = new Date();
+        const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().split('T')[0];
+        const monthLabel = now.toLocaleString('en', { month: 'short' }) + " '" + String(now.getFullYear()).slice(2);
+
+        let count = 0;
+        let done = false;
+
+        for (let page = 1; page <= 3 && !done; page++) {
+          const res = await fetch(`https://api.github.com/users/sandeval/events/public?per_page=100&page=${page}`);
+          if (!res.ok) break;
+          const events = await res.json();
+          if (!events.length) break;
+
+          for (const e of events) {
+            if (e.created_at.slice(0, 10) < monthStart) { done = true; break; }
+            if (e.type === 'PushEvent') count += e.payload.commits?.length ?? 0;
+          }
+        }
+
+        if (count > 0) {
+          const numEl = document.querySelector('.pcard-code .pcard-num');
+          const subEl = document.querySelector('.pcard-code .pcard-sub');
+          if (numEl) numEl.innerHTML = `${count}<span class="unit">commits</span>`;
+          if (subEl) subEl.innerHTML = `${monthLabel} · <em>shipping LSPM</em>`;
+        }
+      } catch (_) { /* keep static fallback */ }
+    })();
   </script>
 
 </body>
