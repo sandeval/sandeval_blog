@@ -4,7 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>sandeval · Alejandro Sandoval</title>
-  <meta name="description" content="Engineer @ Cloudflare. AI security, prompt injection, 35mm. Field notes from CDMX.">
+  <meta name="description" content="Security & networking background, now deep in AI/ML. Building in public from CDMX.">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,300&family=JetBrains+Mono:wght@400;500&family=Permanent+Marker&display=swap" rel="stylesheet">
   <style>
@@ -911,22 +917,28 @@
     .pcard-code .pcard-info { gap: 8px; }
     .commit-grid {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
-      gap: 2px;
-      width: 86px;
+      grid-template-columns: repeat(7, 11px);
+      grid-template-rows: repeat(4, 11px);
+      gap: 3px;
       align-self: center;
+      transition: filter 0.35s ease;
     }
     .cc {
-      aspect-ratio: 1;
-      background: #e8e4de;
+      width: 11px; height: 11px;
+      background: #d8d2c8;
       border-radius: 2px;
-      transition: transform 0.5s ease;
+      transition: transform 0.25s ease;
     }
     .cc.cc-1 { background: #9be9a8; }
     .cc.cc-2 { background: #40c463; }
     .cc.cc-3 { background: #30a14e; }
     .cc.cc-4 { background: #216e39; }
-    .pcard-code:hover .cc { transform: scale(0.95); }
+    .pcard-code:hover .commit-grid {
+      filter: brightness(1.12) saturate(1.25);
+    }
+    .pcard-code:hover .cc { transform: scale(0.93); }
+    .pcard-code:hover .cc.cc-3,
+    .pcard-code:hover .cc.cc-4 { transform: scale(1.06); }
     .pcard-code:hover .cc.cc-4 { transform: scale(1.05); }
 
     /* ── ASYMMETRY (intentional, single offender per zone) ── */
@@ -1219,6 +1231,11 @@
       font-size: 7px;
       font-weight: 700;
     }
+    .ambadge-logo--cf {
+      background: #F48120;
+      border-radius: 4px;
+    }
+    .ambadge-logo--cf svg { width: 14px; height: 14px; }
 
     /* ── REDUCED MOTION (proper @media wrapper) ── */
     @media (prefers-reduced-motion: reduce) {
@@ -1258,7 +1275,7 @@
       <a href="/etc">/etc</a>
     </div>
     <div class="nav-right" aria-label="Social links">
-      <a class="nav-icon" href="https://x.com/sandeval" target="_blank" rel="noopener noreferrer" aria-label="X.com profile">
+      <a class="nav-icon" href="https://x.com/0xsandeval" target="_blank" rel="noopener noreferrer" aria-label="X.com profile">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
       </a>
       <a class="nav-icon" href="https://github.com/sandeval" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
@@ -1280,12 +1297,11 @@
         </div>
         <div class="eyebrow">
           <span class="pulse"></span>
-          Engineer @ Cloudflare
+          Building in public
         </div>
         <h1>Alejandro<br>Sandoval<span class="dim">.</span></h1>
-        <div class="hero-handle"><span>sando</span> · cdmx · <em>aprendiendo en público</em></div>
         <p class="hero-bio">
-          I work on <strong>AI security</strong> at Cloudflare. Right now I'm down the <em>prompt-injection</em> rabbit hole — how LLMs get tricked, and how to catch them failing quietly. Writing it all down as I learn, because I'm gonna forget otherwise.
+          Security & networking background, now deep in <strong>AI/ML</strong>. Writing it all down as I learn, <em>because I'm gonna forget otherwise.</em>
         </p>
         <div class="chips">
           <span class="chip accent">LSPM ↗</span>
@@ -1324,19 +1340,24 @@
       </div>
       <div class="bio-card">
         <div class="bio-card-eyebrow">currently</div>
-        <div class="bio-card-main">Engineer @ Cloudflare</div>
-        <div class="bio-card-sub"><em>Making LLMs harder to fool</em></div>
+        <div class="bio-card-main">AWS Solutions Architect</div>
+        <div class="bio-card-sub"><em>studying for SAA-C03</em></div>
         <div class="bio-card-logos">
-          <span class="bio-logo">Cloudflare</span>
-          <span class="bio-logo">Workers AI</span>
-          <span class="bio-logo">AI Security</span>
+          <span class="bio-logo">AWS</span>
+          <span class="bio-logo">SAA-C03</span>
         </div>
       </div>
       <div class="bio-card">
         <div class="bio-card-eyebrow">previously</div>
-        <div class="bio-card-main">Cisco · TrendAI</div>
-        <div class="bio-card-sub"><span>Network Support</span> · <span>Cybersec Intern</span></div>
+        <div class="bio-card-main">Cloudflare · Cisco · TrendAI</div>
+        <div class="bio-card-sub"><span>Technical Support</span> · <span>Network Support</span> · <span>Cybersec Intern</span></div>
         <div class="bio-card-badges">
+          <span class="ambadge" title="Cloudflare">
+            <span class="ambadge-logo ambadge-logo--cf">
+              <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M42.6 38.1c.2-.6.2-1.2-.1-1.7-.3-.5-.8-.8-1.4-.9l-19.8-.3c-.2 0-.3-.1-.4-.2-.1-.1-.1-.3 0-.4l.5-1.3c.2-.6.2-1.2-.1-1.7-.3-.5-.8-.8-1.4-.9L16 30.5c-.4 0-.7.1-.9.4l-4.5 11.3c-.1.3 0 .6.1.8.2.2.4.4.7.4h30.2c.5 0 1-.4 1.1-.9l.9-4.4z" fill="white"/><path d="M44.9 29.2c-.1 0-.3 0-.4.1-.1.1-.2.2-.2.4l-.5 1.7c-.2.6-.2 1.2.1 1.7.3.5.8.8 1.4.9l3.2.3c.2 0 .3.1.4.2.1.1.1.3 0 .4l-.5 1.3c-.2.6-.2 1.2.1 1.7.3.5.8.8 1.4.9l3.5.2c.4 0 .8-.2 1-.5.2-.3.2-.7.1-1.1l-1.8-7.1c-.1-.5-.6-.9-1.1-.9l-6.7-.2z" fill="white"/></svg>
+            </span>
+            Cloudflare
+          </span>
           <span class="ambadge" title="Cisco">
             <span class="ambadge-logo ambadge-logo--cisco">cs</span>
             Cisco
@@ -1397,10 +1418,10 @@
             <span class="tracker-pulse"></span>
             building
           </div>
-          <div class="tracker-meta">v0.2 · live</div>
+          <div class="tracker-meta">this week</div>
         </div>
-        <div class="tracker-main">LSPM</div>
-        <div class="tracker-sub">prompt-injection · 89% recall</div>
+        <div class="tracker-main">sandeval.dev</div>
+        <div class="tracker-sub">reinventing myself</div>
       </div>
     </div>
 
@@ -1454,10 +1475,10 @@
          aria-label="GitHub commits this month">
         <div class="pcard-info">
           <div class="pcard-label">code</div>
-          <div class="pcard-num">47<span class="unit">commits</span></div>
-          <div class="pcard-sub">this month · <em>shipping LSPM</em></div>
+          <div class="pcard-num" id="commit-count">—<span class="unit">commits</span></div>
+          <div class="pcard-sub" id="commit-sub">this month</div>
         </div>
-        <div class="commit-grid" aria-hidden="true">
+        <div class="commit-grid" id="commit-grid" aria-hidden="true">
           <span class="cc cc-1"></span><span class="cc cc-0"></span><span class="cc cc-2"></span><span class="cc cc-1"></span><span class="cc cc-3"></span><span class="cc cc-1"></span><span class="cc cc-0"></span>
           <span class="cc cc-2"></span><span class="cc cc-3"></span><span class="cc cc-1"></span><span class="cc cc-4"></span><span class="cc cc-2"></span><span class="cc cc-1"></span><span class="cc cc-0"></span>
           <span class="cc cc-1"></span><span class="cc cc-2"></span><span class="cc cc-4"></span><span class="cc cc-3"></span><span class="cc cc-2"></span><span class="cc cc-1"></span><span class="cc cc-2"></span>
@@ -1471,10 +1492,10 @@
 
   <footer>
     <div class="foot-l">
-      <span class="foot-main">sandeval.dev · hecho en cdmx · 2026</span>
+      <span class="foot-main">sando · hecho en cdmx · 2026</span>
       <span class="foot-sub">last touched <em>may '26</em> · still a work in progress</span>
       <div class="social-mobile" aria-label="Social links">
-        <a class="nav-icon" href="https://x.com/sandeval" target="_blank" rel="noopener noreferrer" aria-label="X.com profile">
+        <a class="nav-icon" href="https://x.com/0xsandeval" target="_blank" rel="noopener noreferrer" aria-label="X.com profile">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
         <a class="nav-icon" href="https://github.com/sandeval" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">
@@ -1595,33 +1616,25 @@
 
     document.querySelectorAll('section[id]').forEach(s => scrollSpy.observe(s));
 
-    // GitHub commits — fetch real count for current month
+    // GitHub commits — fetch via worker (authenticated, cached 1h)
     (async () => {
       try {
+        const res = await fetch('/api/commits');
+        if (!res.ok) return;
+        const { count, grid } = await res.json();
+
         const now = new Date();
-        const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().split('T')[0];
         const monthLabel = now.toLocaleString('en', { month: 'short' }) + " '" + String(now.getFullYear()).slice(2);
 
-        let count = 0;
-        let done = false;
+        const numEl = document.getElementById('commit-count');
+        const subEl = document.getElementById('commit-sub');
+        const gridEl = document.getElementById('commit-grid');
 
-        for (let page = 1; page <= 3 && !done; page++) {
-          const res = await fetch(`https://api.github.com/users/sandeval/events/public?per_page=100&page=${page}`);
-          if (!res.ok) break;
-          const events = await res.json();
-          if (!events.length) break;
+        if (numEl) numEl.innerHTML = `${count}<span class="unit">commits</span>`;
+        if (subEl) subEl.textContent = monthLabel;
 
-          for (const e of events) {
-            if (e.created_at.slice(0, 10) < monthStart) { done = true; break; }
-            if (e.type === 'PushEvent') count += e.payload.commits?.length ?? 0;
-          }
-        }
-
-        if (count > 0) {
-          const numEl = document.querySelector('.pcard-code .pcard-num');
-          const subEl = document.querySelector('.pcard-code .pcard-sub');
-          if (numEl) numEl.innerHTML = `${count}<span class="unit">commits</span>`;
-          if (subEl) subEl.innerHTML = `${monthLabel} · <em>shipping LSPM</em>`;
+        if (gridEl && Array.isArray(grid)) {
+          gridEl.innerHTML = grid.map(v => `<span class="cc cc-${v}"></span>`).join('');
         }
       } catch (_) { /* keep static fallback */ }
     })();
