@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plan de Mercadotecnia | EcoLiving MX</title>
+  <meta name="description" content="Blog sobre el desarrollo de un Plan de Mercadotecnia para la empresa ficticia EcoLiving MX. Actividad Complementaria 2 - Unidad 5: Mercadotecnia en Internet." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark:   #1a6e3c;
+      --green:        #2d9e5f;
+      --green-light:  #e8f5ee;
+      --green-mid:    #a8d5b5;
+      --accent:       #f4a026;
+      --text:         #1c2b1e;
+      --text-muted:   #5a6b5e;
+      --bg:           #fafcfb;
+      --card:         #ffffff;
+      --border:       #dde8e1;
+      --radius:       12px;
+      --max-w:        860px;
+      --shadow:       0 4px 24px rgba(0,0,0,.08);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      background: linear-gradient(135deg, #0f3d24 0%, #1a6e3c 60%, #2d9e5f 100%);
+      color: #fff;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .site-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1400&q=60&fit=crop') center/cover no-repeat;
+      opacity: .12;
+    }
+
+    .header-inner {
+      position: relative;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem 2.5rem;
+    }
+
+    .subject-badge {
+      display: inline-block;
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.35);
+      color: #d4f0e0;
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .3rem .9rem;
+      border-radius: 99px;
+      margin-bottom: 1.2rem;
+    }
+
+    .site-header h1 {
+      font-family: 'Merriweather', serif;
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: .6rem;
+    }
+
+    .site-header h1 span {
+      color: #7ee8a8;
+    }
+
+    .header-meta {
+      font-size: .82rem;
+      color: rgba(255,255,255,.72);
+      margin-top: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem 1.4rem;
+    }
+
+    .header-meta strong { color: #fff; }
+
+    /* ===== NAV ===== */
+    .toc-nav {
+      background: var(--green-dark);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,.18);
+    }
+
+    .toc-nav-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: .2rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .toc-nav-inner::-webkit-scrollbar { display: none; }
+
+    .toc-nav a {
+      white-space: nowrap;
+      color: rgba(255,255,255,.75);
+      text-decoration: none;
+      font-size: .76rem;
+      font-weight: 500;
+      padding: .75rem .7rem;
+      transition: color .2s, border-bottom .2s;
+      border-bottom: 2px solid transparent;
+    }
+
+    .toc-nav a:hover {
+      color: #7ee8a8;
+      border-bottom-color: #7ee8a8;
+    }
+
+    /* ===== MAIN LAYOUT ===== */
+    .main-content {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    /* ===== SECTIONS ===== */
+    .blog-section {
+      background: var(--card);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 2.5rem 2.2rem;
+      margin-bottom: 2.2rem;
+      border: 1px solid var(--border);
+    }
+
+    .section-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2.2rem;
+      height: 2.2rem;
+      background: var(--green);
+      color: #fff;
+      font-size: .78rem;
+      font-weight: 700;
+      border-radius: 50%;
+      margin-bottom: .8rem;
+    }
+
+    .blog-section h2 {
+      font-family: 'Merriweather', serif;
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 1.3rem;
+      padding-bottom: .6rem;
+      border-bottom: 2px solid var(--green-light);
+    }
+
+    .blog-section h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin: 1.6rem 0 .5rem;
+    }
+
+    .blog-section p {
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+
+    .blog-section ul, .blog-section ol {
+      margin: .5rem 0 1rem 1.5rem;
+      color: var(--text);
+    }
+
+    .blog-section li { margin-bottom: .4rem; }
+
+    /* ===== BLOG IMAGE ===== */
+    .blog-img-wrap {
+      width: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 1.5rem 0;
+      position: relative;
+    }
+
+    .blog-img-wrap img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .img-caption {
+      text-align: center;
+      font-size: .74rem;
+      color: var(--text-muted);
+      margin-top: .45rem;
+      font-style: italic;
+    }
+
+    /* ===== CARDS GRID ===== */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin: 1.4rem 0;
+    }
+
+    .info-card {
+      background: var(--green-light);
+      border-left: 4px solid var(--green);
+      border-radius: 8px;
+      padding: 1.1rem 1.2rem;
+    }
+
+    .info-card .card-label {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+      margin-bottom: .3rem;
+    }
+
+    .info-card .card-value {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--green-dark);
+    }
+
+    .info-card .card-desc {
+      font-size: .8rem;
+      color: var(--text-muted);
+      margin-top: .2rem;
+    }
+
+    /* ===== HIGHLIGHT BOX ===== */
+    .highlight-box {
+      background: linear-gradient(135deg, var(--green-light), #f0faf5);
+      border: 1px solid var(--green-mid);
+      border-radius: 10px;
+      padding: 1.3rem 1.5rem;
+      margin: 1.4rem 0;
+    }
+
+    .highlight-box strong {
+      color: var(--green-dark);
+    }
+
+    /* ===== SWOT TABLE ===== */
+    .swot-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 1.4rem 0;
+    }
+
+    .swot-cell {
+      border-radius: 8px;
+      padding: 1.2rem;
+    }
+
+    .swot-cell.fortalezas { background: #e6f4ec; border-top: 4px solid #27ae60; }
+    .swot-cell.debilidades { background: #fff3e0; border-top: 4px solid #f39c12; }
+    .swot-cell.oportunidades { background: #e8f4fd; border-top: 4px solid #2980b9; }
+    .swot-cell.amenazas { background: #fde8e8; border-top: 4px solid #e74c3c; }
+
+    .swot-cell h4 {
+      font-size: .9rem;
+      font-weight: 700;
+      margin-bottom: .6rem;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .swot-cell.fortalezas h4 { color: #1a6e3c; }
+    .swot-cell.debilidades h4 { color: #b8770a; }
+    .swot-cell.oportunidades h4 { color: #1a5c8a; }
+    .swot-cell.amenazas h4 { color: #b94040; }
+
+    .swot-cell ul { margin-left: 1.1rem; font-size: .85rem; }
+
+    /* ===== BUDGET TABLE ===== */
+    .budget-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .9rem;
+      margin: 1.2rem 0;
+    }
+
+    .budget-table th {
+      background: var(--green-dark);
+      color: #fff;
+      padding: .75rem 1rem;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .budget-table td {
+      padding: .7rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .budget-table tr:nth-child(even) td { background: var(--green-light); }
+    .budget-table tr.total td { font-weight: 700; background: #e0f0e8; }
+    .budget-table th:last-child, .budget-table td:last-child { text-align: right; }
+
+    /* ===== OBJECTIVES ===== */
+    .objective-item {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .objective-item:last-child { border-bottom: none; }
+
+    .obj-icon {
+      width: 2.4rem;
+      height: 2.4rem;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--green);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+
+    .obj-body h4 {
+      font-weight: 700;
+      font-size: .95rem;
+      color: var(--green-dark);
+      margin-bottom: .25rem;
+    }
+
+    .obj-body p { font-size: .87rem; margin: 0; color: var(--text-muted); }
+
+    /* ===== KPI BARS ===== */
+    .kpi-item {
+      margin-bottom: 1.1rem;
+    }
+
+    .kpi-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: .84rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: .3rem;
+    }
+
+    .kpi-bar-bg {
+      height: 8px;
+      background: var(--border);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .kpi-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--green), #5ed89c);
+      border-radius: 99px;
+    }
+
+    /* ===== STRATEGY STEPS ===== */
+    .strategy-steps {
+      counter-reset: step;
+      list-style: none;
+      margin: 1rem 0;
+    }
+
+    .strategy-steps li {
+      counter-increment: step;
+      display: flex;
+      gap: 1rem;
+      padding: .9rem 0;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .strategy-steps li:last-child { border-bottom: none; }
+
+    .strategy-steps li::before {
+      content: counter(step);
+      flex-shrink: 0;
+      width: 2rem;
+      height: 2rem;
+      background: var(--accent);
+      color: #fff;
+      font-weight: 700;
+      font-size: .85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin-top: .1rem;
+    }
+
+    .strategy-steps li p { margin: 0; font-size: .9rem; }
+    .strategy-steps li strong { display: block; font-size: .95rem; color: var(--green-dark); margin-bottom: .15rem; }
+
+    /* ===== REFERENCES ===== */
+    .references-section {
+      background: #f5f8f6;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 2rem 2.2rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .references-section h2 {
+      font-family: 'Merriweather', serif;
+      font-size: 1.3rem;
+      color: var(--green-dark);
+      margin-bottom: 1.2rem;
+      padding-bottom: .5rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .reference-entry {
+      font-size: .88rem;
+      color: var(--text);
+      padding-left: 2rem;
+      text-indent: -2rem;
+      line-height: 1.8;
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,.75);
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: .82rem;
+    }
+
+    .site-footer strong { color: #fff; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .blog-section { padding: 1.5rem 1.2rem; }
+      .swot-grid { grid-template-columns: 1fr; }
+      .toc-nav a { font-size: .7rem; padding: .7rem .5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="subject-badge">Desarrollo de Sitios Web · Unidad 5 · Act. Complementaria 2</div>
+    <h1>Plan de Mercadotecnia<br><span>EcoLiving MX</span></h1>
+    <p style="color:rgba(255,255,255,.8);font-size:.95rem;margin-top:.8rem;max-width:560px;">
+      Estrategia integral de marketing digital para una empresa ficticia de productos sustentables para el hogar.
+    </p>
+    <div class="header-meta">
+      <span><strong>Materia:</strong> Desarrollo de Sitios Web con Transacciones en Línea</span>
+      <span><strong>Alumno:</strong> Alejandro Sandoval G.</span>
+      <span><strong>Semestre:</strong> 6°</span>
+      <span><strong>Fecha:</strong> Mayo 2026</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===== STICKY NAV ===== -->
+<nav class="toc-nav" aria-label="Índice de contenido">
+  <div class="toc-nav-inner">
+    <a href="#intro">1. Intro</a>
+    <a href="#investigacion">2. Investigación</a>
+    <a href="#producto">3. Producto</a>
+    <a href="#competencia">4. Competencia</a>
+    <a href="#presupuesto">5. Presupuesto</a>
+    <a href="#precio">6. Precio y Marca</a>
+    <a href="#objetivos">7. Objetivos</a>
+    <a href="#monitoreo">8. Monitoreo</a>
+    <a href="#estrategia">9. Estrategia</a>
+    <a href="#conclusion">10. Conclusión</a>
+    <a href="#referencias">Referencias</a>
+  </div>
+</nav>
+
+<!-- ===== MAIN ===== -->
+<main class="main-content">
+
+  <!-- ===== 1. INTRODUCCIÓN ===== -->
+  <section class="blog-section" id="intro">
+    <div class="section-number">1</div>
+    <h2>Introducción</h2>
+
+    <p>
+      En la era digital en que vivimos, desarrollar un <strong>Plan de Mercadotecnia</strong> sólido es una de las acciones más estratégicas que cualquier empresa puede llevar a cabo. La mercadotecnia en internet no solo permite a los negocios llegar a un público más amplio, sino que también ofrece herramientas precisas para medir resultados, ajustar campañas en tiempo real y construir relaciones duraderas con los consumidores.
+    </p>
+
+    <div class="blog-img-wrap">
+      <img
+        src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=900&h=260&fit=crop&q=80"
+        alt="Equipo de trabajo desarrollando estrategia de marketing digital"
+        loading="lazy"
+      />
+    </div>
+    <p class="img-caption">Figura 1. Estrategia de marketing digital en acción. Fuente: Unsplash.</p>
+
+    <p>
+      El presente blog documenta el desarrollo de un Plan de Mercadotecnia para la empresa ficticia <strong>EcoLiving MX</strong>, una tienda en línea que comercializa productos sustentables para el hogar. A lo largo de este documento se abordarán los diez componentes esenciales de un plan de marketing completo: desde la investigación de mercado y el análisis de la competencia, hasta la definición de objetivos SMART, el monitoreo de resultados y la estrategia digital integral.
+    </p>
+    <p>
+      La mercadotecnia digital, según el apunte de la asignatura, se define como la aplicación de estrategias de comercialización en medios digitales, con el fin de impulsar marcas, hacerlas referencia y aumentar sus ventas mediante herramientas tecnológicas. Este concepto es el hilo conductor de todo el plan que aquí se presenta.
+    </p>
+
+    <div class="highlight-box">
+      <strong>Empresa ficticia:</strong> EcoLiving MX — tienda de e-commerce B2C dedicada a la venta de productos ecológicos para el hogar: limpiadores biodegradables, bolsas reutilizables, utensilios de bambú y cosméticos naturales. Su propuesta de valor es ofrecer alternativas sustentables, accesibles y de calidad para los hogares mexicanos.
+    </div>
+  </section>
+
+  <!-- ===== 2. INVESTIGACIÓN ===== -->
+  <section class="blog-section" id="investigacion">
+    <div class="section-number">2</div>
+    <h2>Investigación</h2>
+
+    <p>
+      Antes de diseñar cualquier estrategia, es indispensable realizar una investigación profunda del entorno en el que operará la empresa. Esta fase permite comprender el mercado, identificar oportunidades y detectar riesgos potenciales.
+    </p>
+
+    <h3>Mercado de productos sustentables en México</h3>
+    <p>
+      El mercado verde en México ha experimentado un crecimiento significativo en los últimos años. De acuerdo con diversas estimaciones, más del 60% de los consumidores mexicanos de entre 18 y 45 años declara estar dispuesto a pagar un mayor precio por productos que sean respetuosos con el medio ambiente. La penetración de internet en México supera el 76% de la población, lo que convierte al comercio electrónico en un canal con alto potencial de alcance.
+    </p>
+
+    <div class="blog-img-wrap">
+      <img
+        src="https://images.unsplash.com/photo-1542601906897-60c3b20d069e?w=900&h=260&fit=crop&q=80"
+        alt="Productos ecológicos y sustentables para el hogar"
+        loading="lazy"
+      />
+    </div>
+    <p class="img-caption">Figura 2. Productos ecológicos con alta demanda entre consumidores conscientes. Fuente: Unsplash.</p>
+
+    <h3>Perfil del consumidor objetivo</h3>
+    <div class="cards-grid">
+      <div class="info-card">
+        <div class="card-label">Edad</div>
+        <div class="card-value">22–40</div>
+        <div class="card-desc">Millennials y Generación Z comprometidos con el medio ambiente</div>
+      </div>
+      <div class="info-card">
+        <div class="card-label">Nivel socioeconómico</div>
+        <div class="card-value">C / C+</div>
+        <div class="card-desc">Ingreso medio-alto, acceso a internet y tarjeta de crédito/débito</div>
+      </div>
+      <div class="info-card">
+        <div class="card-label">Comportamiento</div>
+        <div class="card-value">Digital</div>
+        <div class="card-desc">Compra frecuente en línea, activos en redes sociales y conscientes del impacto ambiental</div>
+      </div>
+      <div class="info-card">
+        <div class="card-label">Ubicación</div>
+        <div class="card-value">ZMVM</div>
+        <div class="card-desc">Zona Metropolitana del Valle de México y ciudades capitales</div>
+      </div>
+    </div>
+
+    <h3>Tendencias del e-commerce en México</h3>
+    <ul>
+      <li>El e-commerce creció más del 23% anual en los últimos tres años en México.</li>
+      <li>Las categorías de hogar y cuidado personal son las de mayor expansión en tiendas en línea.</li>
+      <li>El uso de dispositivos móviles representa más del 70% del tráfico en tiendas en línea.</li>
+      <li>Los consumidores valoran la transparencia, la sostenibilidad y la entrega rápida.</li>
+    </ul>
+  </section>
+
+  <!-- ===== 3. PRODUCTO ===== -->
+  <section class="blog-section" id="producto">
+    <div class="section-number">3</div>
+    <h2>Producto</h2>
+
+    <p>
+      <strong>EcoLiving MX</strong> ofrece una línea de productos sustentables agrupados en cuatro categorías principales, todas orientadas a transformar el hogar en un espacio más consciente y respetuoso con el ambiente.
+    </p>
+
+    <div class="blog-img-wrap">
+      <img
+        src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&h=260&fit=crop&q=80"
+        alt="Variedad de productos sustentables para el hogar"
+        loading="lazy"
+      />
+    </div>
+    <p class="img-caption">Figura 3. Línea de productos EcoLiving MX. Fuente: Unsplash.</p>
+
+    <h3>Catálogo de productos</h3>
+    <div class="cards-grid">
+      <div class="info-card">
+        <div class="card-label">Categoría 1</div>
+        <div class="card-value" style="font-size:1.1rem;">🧼 Limpieza</div>
+        <div class="card-desc">Jabones biodegradables, multiusos concentrados y esponjas de agave</div>
+      </div>
+      <div class="info-card">
+        <div class="card-label">Categoría 2</div>
+        <div class="card-value" style="font-size:1.1rem;">🛍 Reutilizables</div>
+        <div class="card-desc">Bolsas de tela, contenedores de bambú y envases de vidrio reutilizables</div>
+      </div>
+      <div class="info-card">
+        <div class="card-label">Categoría 3</div>
+        <div class="card-value" style="font-size:1.1rem;">🌿 Cosméticos</div>
+        <div class="card-desc">Shampoo sólido, acondicionador de manteca de karité y desodorante natural</div>
+      </div>
+      <div class="info-card">
+        <div class="card-label">Categoría 4</div>
+        <div class="card-value" style="font-size:1.1rem;">🍳 Cocina</div>
+        <div class="card-desc">Utensilios de bambú, paños de tela encerada y filtros de café reutilizables</div>
+      </div>
+    </div>
+
+    <h3>Propuesta de valor</h3>
+    <div class="highlight-box">
+      <p>
+        <strong>EcoLiving MX</strong> no solo vende productos; ofrece un estilo de vida. Cada artículo en el catálogo está certificado como libre de plásticos de un solo uso, elaborado con materiales naturales o reciclados, y empacado con embalaje 100% compostable. La conveniencia del canal online permite al consumidor acceder al catálogo completo desde cualquier dispositivo, con envío a domicilio en 48–72 horas.
+      </p>
+    </div>
+
+    <h3>Ciclo de vida del producto</h3>
+    <p>
+      EcoLiving MX se encuentra en la fase de <strong>introducción/crecimiento</strong> de su ciclo de vida. El mercado de productos ecológicos está en expansión y la marca trabaja activamente para posicionarse antes de que la competencia sature el segmento.
+    </p>
+  </section>
+
+  <!-- ===== 4. ANÁLISIS DE LA COMPETENCIA ===== -->
+  <section class="blog-section" id="competencia">
+    <div class="section-number">4</div>
+    <h2>Análisis de la Competencia</h2>
+
+    <p>
+      Conocer el entorno competitivo es esencial para identificar dónde puede diferenciarse EcoLiving MX y qué estrategias deberá adoptar para ganar participación de mercado.
+    </p>
+
+    <div class="blog-img-wrap">
+      <img
+        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&h=240&fit=crop&q=80"
+        alt="Análisis de datos y competencia empresarial"
+        loading="lazy"
+      />
+    </div>
+    <p class="img-caption">Figura 4. Herramientas de análisis estratégico. Fuente: Unsplash.</p>
+
+    <h3>Principales competidores</h3>
+    <ul>
+      <li><strong>Mercado Libre / Amazon México:</strong> grandes marketplaces con amplio catálogo de productos ecológicos de diversas marcas. Ventaja: reconocimiento de marca y logística. Desventaja: poco enfoque en sustentabilidad.</li>
+      <li><strong>Lush México:</strong> marca internacional de cosméticos naturales con tienda física y online. Alta reputación pero precios elevados y catálogo limitado en hogar.</li>
+      <li><strong>Biobolsa MX y Sustenta:</strong> marcas locales con presencia en redes sociales pero sin tienda en línea robusta.</li>
+    </ul>
+
+    <h3>Análisis FODA de EcoLiving MX</h3>
+    <div class="swot-grid">
+      <div class="swot-cell fortalezas">
+        <h4>Fortalezas</h4>
+        <ul>
+          <li>Catálogo integral (hogar + cosmética)</li>
+          <li>100% operación en línea (bajos costos fijos)</li>
+          <li>Embalaje compostable diferenciador</li>
+          <li>Precios accesibles vs. competidores internacionales</li>
+        </ul>
+      </div>
+      <div class="swot-cell debilidades">
+        <h4>Debilidades</h4>
+        <ul>
+          <li>Marca nueva sin reconocimiento</li>
+          <li>Presupuesto de marketing limitado</li>
+          <li>Dependencia de proveedores locales</li>
+          <li>Sin tienda física para prueba del producto</li>
+        </ul>
+      </div>
+      <div class="swot-cell oportunidades">
+        <h4>Oportunidades</h4>
+        <ul>
+          <li>Crecimiento del e-commerce en México</li>
+          <li>Mayor conciencia ambiental postpandemia</li>
+          <li>Tendencia de "zero waste" en redes sociales</li>
+          <li>Legislación que restringe plásticos de uso único</li>
+        </ul>
+      </div>
+      <div class="swot-cell amenazas">
+        <h4>Amenazas</h4>
+        <ul>
+          <li>Entrada de grandes retailers al segmento eco</li>
+          <li>Greenwashing de marcas tradicionales</li>
+          <li>Volatilidad en costos de materias primas</li>
+          <li>Desconfianza del consumidor en compras online</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. PRESUPUESTO ===== -->
+  <section class="blog-section" id="presupuesto">
+    <div class="section-number">5</div>
+    <h2>Presupuesto</h2>
+
+    <p>
+      Un plan de mercadotecnia sin presupuesto es solo un documento de intenciones. La asignación de recursos debe ser proporcional a los objetivos, rentable y flexible para ajustarse a los resultados obtenidos.
+    </p>
+
+    <div class="blog-img-wrap">
+      <img
+        src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&h=230&fit=crop&q=80"
+        alt="Planeación financiera y presupuesto de marketing"
+        loading="lazy"
+      />
+    </div>
+    <p class="img-caption">Figura 5. Distribución del presupuesto de marketing. Fuente: Unsplash.</p>
+
+    <h3>Presupuesto mensual de marketing digital</h3>
+    <table class="budget-table">
+      <thead>
+        <tr>
+          <th>Rubro</th>
+          <th>Descripción</th>
+          <th>Monto mensual</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Meta / Instagram Ads</td>
+          <td>Campañas de awareness y conversión en redes sociales</td>
+          <td>$3,500 MXN</td>
+        </tr>
+        <tr>
+          <td>Google Ads (SEM)</td>
+          <td>Anuncios en buscadores para palabras clave de alto intento de compra</td>
+          <td>$2,800 MXN</td>
+        </tr>
+        <tr>
+          <td>Creación de contenido</td>
+          <td>Fotografía de productos, diseño gráfico y video para redes</td>
+          <td>$2,200 MXN</td>
+        </tr>
+        <tr>
+          <td>Email Marketing</td>
+          <td>Plataforma de automatización y envío de newsletters (Mailchimp)</td>
+          <td>$600 MXN</td>
+        </tr>
+        <tr>
+          <td>Influencer Marketing</td>
+          <td>Colaboración con micro-influencers del nicho eco (1–2 por mes)</td>
+          <td>$1,500 MXN</td>
+        </tr>
+        <tr>
+          <td>SEO / Blog</td>
+          <td>Redacción de artículos optimizados para buscadores</td>
+          <td>$800 MXN</td>
+        </tr>
+        <tr>
+          <td>Herramientas analíticas</td>
+          <td>Google Analytics (gratis) + Hotjar (básico)</td>
+          <td>$400 MXN</td>
+        </tr>
+        <tr class="total">
+          <td colspan="2">TOTAL MENSUAL</td>
+          <td>$11,800 MXN</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="highlight-box">
+      <strong>Nota:</strong> El presupuesto representa aproximadamente el 15% de las ventas proyectadas en el primer trimestre de operación, porcentaje recomendado para empresas en etapa de lanzamiento. Se recomienda revisar la distribución cada mes con base en el retorno de inversión (ROI) por canal.
+    </div>
+  </section>
+
+  <!-- ===== 6. PRECIO, POSICIONAMIENTO Y MARCA ===== -->
+  <section class="blog-section" id="precio">
+    <div class="section-number">6</div>
+    <h2>Precio, Posicionamiento y Marca</h2>
+
+    <div class="blog-img-wrap">
+      <img
+        src="https://images.unsplash.com/photo-1493612276216-ee3925520721?w=900&h=240&fit=crop&q=80"
+        alt="Identidad de marca y posicionamiento"
+        loading="lazy"
+      />
+    </div>
+    <p class="img-caption">Figura 6. Construcción de identidad de marca. Fuente: Unsplash.</p>
+
+    <h3>Estrategia de precios</h3>
+    <p>
+      EcoLiving MX adopta una estrategia de <strong>precios de valor percibido</strong>: los productos se posicionan entre un 15 y 25% por encima de artículos convencionales similares, pero por debajo de marcas internacionales de nicho como Lush. Esto comunica calidad y compromiso ambiental sin resultar inaccesible para el segmento objetivo.
+    </p>
+    <ul>
+      <li>Productos de limpieza: $45–$120 MXN por unidad</li>
+      <li>Bolsas y utensilios reutilizables: $80–$250 MXN</li>
+      <li>Cosméticos naturales: $130–$320 MXN</li>
+    </ul>
+
+    <h3>Posicionamiento de marca</h3>
+    <p>
+      La marca se posiciona como <em>"el aliado cotidiano para un hogar más responsable"</em>. No se dirige solo a activistas ambientales, sino a cualquier persona que quiera dar pasos prácticos y sencillos hacia un estilo de vida más sustentable. El tono de comunicación es cálido, accesible y educativo.
+    </p>
+
+    <h3>Identidad visual y verbal</h3>
+    <div class="cards-grid">
+      <div class="info-card">
+        <div class="card-label">Paleta de color</div>
+        <div class="card-value" style="font-size:1rem;">Verde + Tierra</div>
+        <div class="card-desc">Verde musgo (#4a7c59), arena (#d4b896) y blanco crema (#faf8f3)</div>
+      </div>
+      <div class="info-card">
+        <div class="card-label">Tipografía</div>
+        <div class="card-value" style="font-size:1rem;">Serif + Sans</div>
+        <div class="card-desc">Títulos: Playfair Display. Cuerpo: Lato. Evoca naturalidad y modernidad</div>
+      </div>
+      <div class="info-card">
+        <div class="card-label">Logotipo</div>
+        <div class="card-value" style="font-size:1rem;">Hoja + Casa</div>
+        <div class="card-desc">Icono de hoja integrado en la silueta de una casa, representa el hogar sustentable</div>
+      </div>
+      <div class="info-card">
+        <div class="card-label">Eslogan</div>
+        <div class="card-value" style="font-size:.85rem;">"Tu hogar, el planeta."</div>
+        <div class="card-desc">Mensaje conciso que conecta el espacio doméstico con la responsabilidad ambiental</div>
+      </div>
+    </div>
+
+    <h3>E-Branding</h3>
+    <p>
+      Como señala el apunte de la asignatura, el e-branding busca construir y mantener una marca consistente en todos los puntos de contacto digitales. Para EcoLiving MX esto implica: coherencia visual en Instagram, Facebook y el sitio web; respuestas rápidas y empáticas en comentarios y mensajes directos; y contenido de valor (tutoriales, consejos eco) que refuerce la autoridad de la marca en su nicho.
+    </p>
+  </section>
+
+  <!-- ===== 7. OBJETIVOS REALES ===== -->
+  <section class="blog-section" id="objetivos">
+    <div class="section-number">7</div>
+    <h2>Traza Objetivos Reales</h2>
+
+    <p>
+      Los objetivos de marketing deben seguir el modelo <strong>SMART</strong> (Específicos, Medibles, Alcanzables, Relevantes y Temporales). A continuación se definen los objetivos estratégicos de EcoLiving MX para los primeros seis meses de operación:
+    </p>
+
+    <div class="blog-img-wrap">
+      <img
+        src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=900&h=230&fit=crop&q=80"
+        alt="Definición de objetivos de negocio"
+        loading="lazy"
+      />
+    </div>
+    <p class="img-caption">Figura 7. Planificación y establecimiento de metas. Fuente: Unsplash.</p>
+
+    <div class="objective-item">
+      <div class="obj-icon">🛒</div>
+      <div class="obj-body">
+        <h4>Objetivo 1: Ventas</h4>
+        <p>Alcanzar 200 pedidos mensuales al finalizar el sexto mes de operación, partiendo de 30 pedidos en el primer mes.</p>
+      </div>
+    </div>
+    <div class="objective-item">
+      <div class="obj-icon">👥</div>
+      <div class="obj-body">
+        <h4>Objetivo 2: Audiencia en redes sociales</h4>
+        <p>Llegar a 5,000 seguidores en Instagram en 3 meses, con una tasa de engagement mínima del 4%.</p>
+      </div>
+    </div>
+    <div class="objective-item">
+      <div class="obj-icon">📧</div>
+      <div class="obj-body">
+        <h4>Objetivo 3: Base de datos de email</h4>
+        <p>Construir una lista de al menos 1,000 suscriptores calificados en los primeros 90 días mediante lead magnets y pop-ups en el sitio.</p>
+      </div>
+    </div>
+    <div class="objective-item">
+      <div class="obj-icon">🔍</div>
+      <div class="obj-body">
+        <h4>Objetivo 4: Posicionamiento SEO</h4>
+        <p>Aparecer en la primera página de Google para al menos 5 palabras clave principales del nicho eco-hogar en 6 meses.</p>
+      </div>
+    </div>
+    <div class="objective-item">
+      <div class="obj-icon">⭐</div>
+      <div class="obj-body">
+        <h4>Objetivo 5: Satisfacción del cliente</h4>
+        <p>Mantener una calificación promedio de 4.5/5 estrellas en Google Business y Trustpilot durante todo el periodo evaluado.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 8. MONITOREO Y ANÁLISIS ===== -->
+  <section class="blog-section" id="monitoreo">
+    <div class="section-number">8</div>
+    <h2>Monitoreo y Análisis de Resultados</h2>
+
+    <p>
+      Lo que no se mide, no se puede mejorar. El monitoreo continuo de los indicadores clave de desempeño (KPIs) permite a EcoLiving MX tomar decisiones basadas en datos y optimizar cada canal de comunicación.
+    </p>
+
+    <div class="blog-img-wrap">
+      <img
+        src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=900&h=240&fit=crop&q=80"
+        alt="Dashboard de analítica digital"
+        loading="lazy"
+      />
+    </div>
+    <p class="img-caption">Figura 8. Panel de métricas y analítica en tiempo real. Fuente: Unsplash.</p>
+
+    <h3>KPIs principales y metas mensuales</h3>
+
+    <div class="kpi-item">
+      <div class="kpi-header"><span>Tasa de conversión del sitio web</span><span>Meta: 3%</span></div>
+      <div class="kpi-bar-bg"><div class="kpi-bar-fill" style="width:62%"></div></div>
+    </div>
+    <div class="kpi-item">
+      <div class="kpi-header"><span>Retorno sobre la inversión publicitaria (ROAS)</span><span>Meta: 4x</span></div>
+      <div class="kpi-bar-bg"><div class="kpi-bar-fill" style="width:50%"></div></div>
+    </div>
+    <div class="kpi-item">
+      <div class="kpi-header"><span>Tasa de apertura de email marketing</span><span>Meta: 25%</span></div>
+      <div class="kpi-bar-bg"><div class="kpi-bar-fill" style="width:75%"></div></div>
+    </div>
+    <div class="kpi-item">
+      <div class="kpi-header"><span>Costo por adquisición (CPA)</span><span>Meta: &lt;$180 MXN</span></div>
+      <div class="kpi-bar-bg"><div class="kpi-bar-fill" style="width:80%"></div></div>
+    </div>
+    <div class="kpi-item">
+      <div class="kpi-header"><span>Tráfico orgánico mensual</span><span>Meta: 2,000 visitas</span></div>
+      <div class="kpi-bar-bg"><div class="kpi-bar-fill" style="width:35%"></div></div>
+    </div>
+
+    <h3>Herramientas de monitoreo</h3>
+    <ul>
+      <li><strong>Google Analytics 4:</strong> análisis de comportamiento en el sitio web (sesiones, páginas vistas, embudo de conversión).</li>
+      <li><strong>Meta Business Suite:</strong> métricas de alcance, engagement y conversión en Facebook e Instagram.</li>
+      <li><strong>Google Search Console:</strong> seguimiento del posicionamiento orgánico en buscadores.</li>
+      <li><strong>Mailchimp Reports:</strong> tasas de apertura, clics y bajas en campañas de email.</li>
+      <li><strong>Hotjar:</strong> mapas de calor y grabaciones de sesiones para mejorar la experiencia de usuario (UX).</li>
+    </ul>
+
+    <div class="highlight-box">
+      Como señala el apunte de la asignatura, la <strong>gestión de la reputación online</strong> también forma parte del monitoreo: se debe escuchar activamente lo que se dice de la marca en foros, redes y reseñas, y responder oportunamente para construir confianza y desplazar comentarios negativos.
+    </div>
+  </section>
+
+  <!-- ===== 9. ESTRATEGIA ===== -->
+  <section class="blog-section" id="estrategia">
+    <div class="section-number">9</div>
+    <h2>¿Cómo Definir una Estrategia de Marketing Online?</h2>
+
+    <p>
+      Una estrategia de marketing online es el plan de acción que define <em>cómo</em> la empresa usará los canales digitales para alcanzar a su público objetivo, comunicar su propuesta de valor y convertir visitantes en clientes. Para EcoLiving MX, la estrategia se articula en los siguientes pasos:
+    </p>
+
+    <div class="blog-img-wrap">
+      <img
+        src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=900&h=240&fit=crop&q=80"
+        alt="Estrategia de marketing en redes sociales"
+        loading="lazy"
+      />
+    </div>
+    <p class="img-caption">Figura 9. Estrategia multicanal en marketing digital. Fuente: Unsplash.</p>
+
+    <ol class="strategy-steps">
+      <li>
+        <div>
+          <strong>Definir el buyer persona</strong>
+          <p>Construir un perfil detallado del cliente ideal: datos demográficos, motivaciones, puntos de dolor, plataformas que usa y comportamiento de compra. EcoLiving MX tiene dos buyer personas: "La Mamá Verde" (35–45 años, familia con hijos) y "El Millennial Consciente" (22–32 años, soltero o en pareja).</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>SEO (Search Engine Optimization)</strong>
+          <p>Optimizar el contenido del sitio y el blog con palabras clave como "productos ecológicos México", "limpieza biodegradable", "zero waste hogar" para captar tráfico orgánico de alto intento de compra. Como indica el apunte, el SEO es uno de los mecanismos más efectivos de promoción de sitios web.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>SEM — Google Ads</strong>
+          <p>Campañas de búsqueda pagada orientadas a palabras clave de conversión inmediata. Se utilizará la herramienta Google Ads con estrategia de puja maximizar conversiones. Presupuesto inicial: $2,800 MXN/mes.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>SMM — Redes Sociales (Instagram y TikTok)</strong>
+          <p>Instagram como canal principal para contenido visual de los productos. TikTok para videos educativos tipo "zero waste swap" que pueden volverse virales. Publicaciones de valor 3 veces por semana + Stories diarios. Presupuesto para Social Ads: $3,500 MXN/mes.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>Email Marketing</strong>
+          <p>Automatizar secuencias de bienvenida, carritos abandonados y recomendaciones personalizadas. El email marketing, como señala el apunte, es el medio publicitario más antiguo en internet pero sigue siendo altamente rentable y flexible.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>Marketing de Contenidos / Blog</strong>
+          <p>Publicar artículos de blog semanales que eduquen al consumidor: "10 swaps ecológicos para tu cocina", "Cómo reducir el plástico en tu hogar en 30 días". Este contenido apoya el SEO y construye autoridad de marca.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>Influencer Marketing</strong>
+          <p>Colaborar con micro-influencers (10k–100k seguidores) especializados en sustentabilidad, lifestyle verde y zero waste. Mayor autenticidad y menor costo por impacto que macro-influencers.</p>
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>Medición y optimización continua</strong>
+          <p>Revisar semanalmente los KPIs de cada canal. Pausar anuncios con CPA elevado. Escalar los que generen conversiones rentables. Ajustar el presupuesto mensualmente con base en el ROAS de cada canal.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ===== 10. CONCLUSIÓN ===== -->
+  <section class="blog-section" id="conclusion">
+    <div class="section-number">10</div>
+    <h2>Conclusión</h2>
+
+    <div class="blog-img-wrap">
+      <img
+        src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=900&h=240&fit=crop&q=80"
+        alt="Naturaleza y tecnología, sustentabilidad"
+        loading="lazy"
+      />
+    </div>
+    <p class="img-caption">Figura 10. El marketing digital como puente entre empresa y consumidor consciente. Fuente: Unsplash.</p>
+
+    <p>
+      El desarrollo de un Plan de Mercadotecnia representa una ventaja competitiva fundamental para cualquier empresa que opere en el entorno digital. Para <strong>EcoLiving MX</strong>, la implementación de esta estrategia integral de marketing online puede generar beneficios concretos y sostenidos en múltiples dimensiones:
+    </p>
+
+    <h3>Beneficios para EcoLiving MX</h3>
+    <ul>
+      <li>
+        <strong>Alcance ampliado y segmentado:</strong> a través de Google Ads, redes sociales e influencers, la empresa puede llegar precisamente a consumidores con interés real en productos sustentables, maximizando el rendimiento de cada peso invertido en publicidad.
+      </li>
+      <li>
+        <strong>Construcción de marca sólida:</strong> la coherencia de la identidad visual, el tono de comunicación y el contenido de valor generan confianza y reconocimiento de marca a largo plazo, lo que se traduce en mayor tasa de recompra y recomendación.
+      </li>
+      <li>
+        <strong>Toma de decisiones basada en datos:</strong> el monitoreo constante de KPIs mediante herramientas gratuitas (Google Analytics, Search Console) y asequibles (Hotjar, Mailchimp) permite optimizar el gasto y escalar lo que funciona.
+      </li>
+      <li>
+        <strong>Fidelización y comunidad:</strong> el email marketing y el contenido en redes sociales cultivan una relación continua con el cliente, fomentando la lealtad y convirtiendo a los compradores en embajadores de la marca.
+      </li>
+      <li>
+        <strong>Posicionamiento a bajo costo:</strong> el SEO y el marketing de contenidos son canales de bajo costo marginal cuyo impacto se acumula con el tiempo, generando tráfico orgánico de calidad sin incrementar el presupuesto publicitario.
+      </li>
+    </ul>
+
+    <div class="highlight-box">
+      <p>
+        Como aprendemos de la Unidad 5 de la asignatura, <strong>la mercadotecnia en internet no es un gasto, sino una inversión estratégica</strong>. Para una empresa como EcoLiving MX, que opera exclusivamente en el canal digital y en un nicho de alta conciencia ambiental, un plan de marketing bien estructurado es el motor que convierte el propósito sustentable en resultados comerciales medibles y escalables.
+      </p>
+    </div>
+
+    <p>
+      En conclusión, la aplicación disciplinada de este Plan de Mercadotecnia — que abarca investigación, producto, análisis competitivo, presupuesto, posicionamiento, objetivos SMART, monitoreo y estrategia digital — brinda a EcoLiving MX las herramientas necesarias para crecer de forma ordenada, diferenciada y rentable en el competido mercado del comercio electrónico mexicano.
+    </p>
+  </section>
+
+  <!-- ===== REFERENCIAS ===== -->
+  <section class="references-section" id="referencias">
+    <h2>Referencias</h2>
+    <p class="reference-entry">
+      Hernández Sánchez, E., Kanagusico Hernández, E. D., Butrón Gutiérrez, E. A., Trujillo Viveros, M. A., Gutiérrez Delgado, P., &amp; Montesano Brand, R. (2021). <em>Desarrollo de sitios web con transacciones en línea</em> (Apunte electrónico, Plan de estudios 2012, actualizado 2016). Facultad de Contaduría y Administración, Universidad Nacional Autónoma de México.
+    </p>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <p>
+    <strong>Alejandro Sandoval G.</strong> &nbsp;|&nbsp;
+    Desarrollo de Sitios Web con Transacciones en Línea &nbsp;|&nbsp;
+    Unidad 5 – Mercadotecnia en Internet &nbsp;|&nbsp;
+    Actividad Complementaria 2 &nbsp;|&nbsp;
+    FCA–UNAM &nbsp;|&nbsp; 6.° semestre &nbsp;|&nbsp; 2026
+  </p>
+</footer>
+
+</body>
+</html>
