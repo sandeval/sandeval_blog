@@ -1,70 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog · sandeval</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #f5f2ee; --border: #d8d2c8; --text: #1a1814;
-      --text2: #6b6558; --text3: #a09880; --accent: #c96442;
-    }
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      background-image: radial-gradient(rgba(26,24,20,0.14) 1.4px, transparent 1.4px);
-      background-size: 24px 24px;
-      color: var(--text);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .wrap {
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-    .slug {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 11px;
-      color: var(--accent);
-      letter-spacing: 0.08em;
-    }
-    h1 {
-      font-size: 32px;
-      font-weight: 500;
-      letter-spacing: -1px;
-      color: var(--text);
-    }
-    p {
-      font-size: 13px;
-      color: var(--text3);
-      font-family: 'JetBrains Mono', monospace;
-    }
-    a {
-      font-size: 12px;
-      color: var(--text2);
-      text-decoration: none;
-      font-family: 'JetBrains Mono', monospace;
-      border-bottom: 0.5px solid var(--border);
-      padding-bottom: 1px;
-      transition: color 0.15s, border-color 0.15s;
-    }
-    a:hover { color: var(--accent); border-color: var(--accent); }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Blog — Alejandro Sandoval</title>
+<meta name="description" content="Notes on getting into tech, surviving a layoff, and moving from support into software engineering.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Geist+Mono:wght@300..600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="site.js"></script>
 </head>
 <body>
-  <div class="wrap">
-    <span class="slug">/blog</span>
-    <h1>Blog</h1>
-    <p>coming soon — check back.</p>
-    <a href="/">← back</a>
+
+<a class="skip-link" href="#main">Skip to content</a>
+<nav class="nav" id="nav" aria-label="Main navigation">
+  <div class="nav-in">
+    <a class="brand" href="index.html" aria-label="Alejandro Sandoval — home"><span class="brand-dot" aria-hidden="true"></span></a>
+    <div class="nav-links">
+      <a href="index.html">whoami</a>
+      <a href="blog.html" aria-current="page">blog</a>
+      <a href="quests.html">quests</a>
+    </div>
   </div>
+</nav>
+
+<header class="site-header">
+  <a href="index.html">Alejandro Sandoval</a>
+  <p>Support Engineer</p>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <h1>Blog</h1>
+  <div class="prose">
+    <p>Notes from the long way into software — layoffs, support queues, and the stuff nobody writes down because it's embarrassing while it's happening. Mostly so the next person can skip the parts I got wrong.</p>
+  </div>
+
+  <section class="section" aria-labelledby="y2026">
+    <div class="section-head">
+      <h2 id="y2026">2026</h2>
+      <span class="section-meta">3 posts</span>
+    </div>
+
+    <a class="post-row" href="post-layoff.html">
+      <time datetime="2026-09-14">Sep 14</time>
+      <div>
+        <h3>Getting laid off at Cloudflare</h3>
+        <p>Four months in, then a calendar invite with no agenda. What the layoff actually looked like from the inside, and the ninety days between that meeting and the Microsoft offer.</p>
+      </div>
+    </a>
+
+    <a class="post-row" href="#">
+      <time datetime="2026-08-02">Aug 2</time>
+      <div>
+        <h3>How to get into tech and survive the attempt</h3>
+        <p>Help desk at 20, Cisco at 22, Cloudflare at 23. The unglamorous route nobody posts about — and why support is a better on-ramp than a bootcamp if you use it right.</p>
+      </div>
+    </a>
+
+    <a class="post-row" href="#">
+      <time datetime="2026-06-21">Jun 21</time>
+      <div>
+        <h3>Support → SWE: the actual plan</h3>
+        <p>Not a roadmap screenshot. The specific gaps I have, the order I'm closing them in, and how I'll know it worked.</p>
+      </div>
+    </a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-info">
+    <span>Alejandro Sandoval © 2026</span>
+    <div class="theme-picker" role="group" aria-label="Theme preference">
+      <button class="icon-btn" type="button" data-theme-choice="system" aria-label="System theme" aria-pressed="true" title="System theme"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 21h8m-4-5v5"/></svg></button>
+      <button class="icon-btn" type="button" data-theme-choice="light" aria-label="Light theme" aria-pressed="false" title="Light theme"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg></button>
+      <button class="icon-btn" type="button" data-theme-choice="dark" aria-label="Dark theme" aria-pressed="false" title="Dark theme"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/></svg></button>
+    </div>
+  </div>
+  <div class="foot-links" aria-label="Contact and social links">
+    <a class="icon-btn" href="https://x.com/0xsandeval" target="_blank" rel="noopener" aria-label="X" title="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 3 16 18M20 3 4 21M4 3h4l12 18h-4Z"/></svg></a>
+    <a class="icon-btn" href="https://github.com/sandeval" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21v-3c-4 1-4-2-5-2m11 5v-4c0-1-.5-1.5-1-2 3-.4 6-1.5 6-6a5 5 0 0 0-1.5-3.5 5 5 0 0 0-.1-3.5S17 1.5 14.5 3a13 13 0 0 0-5 0C7 1.5 5.6 2 5.6 2a5 5 0 0 0-.1 3.5A5 5 0 0 0 4 9c0 4.5 3 5.6 6 6-.5.5-1 1-1 2"/></svg></a>
+    <a class="icon-btn" href="https://www.linkedin.com/in/sandeval/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M7 10v7m0-10v.1M11 17v-7m0 3a3 3 0 0 1 6 0v4"/></svg></a>
+  </div>
+</footer>
+
+<div class="devnote"><div class="devnote-in">
+  <h4>Nota de taller — borra este bloque antes de publicar</h4>
+  <p>Los títulos y bajadas son <b>borradores</b> con tus fechas reales del CV. Reescríbelos con lo que de verdad pasó — la bajada es lo único que la gente lee antes de decidir si entra, así que ahí va el gancho concreto, no el resumen.</p>
+  <p>Cuando tengas más de ~8 posts, agrupa por año con otro <code>.section</code>. Mientras tanto un solo bloque se ve más limpio que una lista larga.</p>
+</div></div>
+
 </body>
 </html>
