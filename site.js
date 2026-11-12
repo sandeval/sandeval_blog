@@ -36,6 +36,16 @@
         }
       });
     });
+    const bar = document.getElementById('read-progress');
+    if (bar) {
+      const update = () => {
+        const max = document.documentElement.scrollHeight - innerHeight;
+        bar.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, scrollY / max) : 0) + ')';
+      };
+      update();
+      addEventListener('scroll', update, { passive: true });
+      addEventListener('resize', update);
+    }
     const nav = document.getElementById('nav');
     const updateNav = () => nav.classList.toggle('scrolled', scrollY > 8);
     updateNav();
