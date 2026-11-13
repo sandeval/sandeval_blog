@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sandeval.dev/sitemap.xml
