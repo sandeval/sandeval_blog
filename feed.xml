@@ -7,6 +7,13 @@
     <language>en</language>
     <atom:link href="https://sandeval.dev/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
+      <title>My first tech layoff</title>
+      <link>https://sandeval.dev/post-my-first-layoff</link>
+      <guid isPermaLink="true">https://sandeval.dev/post-my-first-layoff</guid>
+      <pubDate>Sat, 14 Nov 2026 12:00:00 GMT</pubDate>
+      <description>A locked laptop, a group chat on fire, and the three months that followed. What it was like to be laid off from Cloudflare, and what came after.</description>
+    </item>
+    <item>
       <title>How to get into tech and survive the attempt</title>
       <link>https://sandeval.dev/post-how-to-get-into-tech</link>
       <guid isPermaLink="true">https://sandeval.dev/post-how-to-get-into-tech</guid>
